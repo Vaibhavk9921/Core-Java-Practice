@@ -1,0 +1,33 @@
+
+class Test {
+	int i;
+	static int j;
+
+	Test() {
+		i++;
+		j++;
+	}
+
+	void disp() {
+		System.out.println("Hello!!");
+	}
+
+	static void show() {
+		// System.out.println(i); Static Method cannot use instance variable
+		System.out.println(j);
+		Test t4 = new Test();
+		t4.disp();
+	}
+}
+
+public class Methods {
+	public static void main(String[] args) {
+		Test t1 = new Test();
+		Test t2 = new Test();
+		Test t3 = new Test();
+		Test.show();
+		t1.disp();
+		t2.disp();
+		t3.disp();
+	}
+}
